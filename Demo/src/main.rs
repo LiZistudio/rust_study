@@ -27,7 +27,7 @@ pub trait Test {
 
 fn main() {
     let stdout = stdout();
-    let message = String::from("你好,rust!");
+    let message = String::from("路漫漫，其修远兮。吾将上下而求索。雄关漫道真如铁，而今迈步从头越。");
     let width = message.chars().count();
 
     let mut writer = BufWriter::new(stdout.lock());
