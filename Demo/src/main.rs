@@ -27,11 +27,15 @@ pub trait Test {
 
 fn main() {
     let stdout = stdout();
-    let message = String::from("路漫漫，其修远兮。吾将上下而求索。雄关漫道真如铁，而今迈步从头越。");
-    let width = message.chars().count();
+    let message1 = String::from("江南游子，把吴钩看了，栏杆拍遍。无人会，登临意。");
+    let message2 = String::from("    醉里挑灯看剑，梦回吹角连营。八百里分麾下炙，五十弦翻塞外声。沙场秋点兵。");
+    let width1 = message1.chars().count();
+    let width2 = message2.chars().count();
 
     let mut writer = BufWriter::new(stdout.lock());
-    say(&message, width, &mut writer).unwrap();
+    say(&message1, width1, &mut writer).unwrap();
+    say(&message2, width2, &mut writer).unwrap();
+
 
 
     
