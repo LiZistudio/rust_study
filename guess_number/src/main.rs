@@ -6,7 +6,7 @@ fn main() {
     println!("欢迎来到猜数字游戏!");
 
     let secret_number: u32 = rand::thread_rng().gen_range(1..101);
-    println!("秘密数字是：{secret_number}");
+    //println!("秘密数字是：{secret_number}");
 
     loop {
         println!("请输入一个数字：");
@@ -27,7 +27,7 @@ fn main() {
             Ordering::Less => println!("{}", "太小！".red()),
             Ordering::Greater => println!("{}", "太大！".red()),
             Ordering::Equal => {
-                println!("{}", "you are winner！".green());
+                println!("{}", "you are winner!".green());
                 break;
             }
         }
