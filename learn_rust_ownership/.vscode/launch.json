@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'learn_rust_ownership'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=learn_rust_ownership",
+                    "--package=learn_rust_ownership"
+                ],
+                "filter": {
+                    "name": "learn_rust_ownership",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'learn_rust_ownership'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=learn_rust_ownership",
+                    "--package=learn_rust_ownership"
+                ],
+                "filter": {
+                    "name": "learn_rust_ownership",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
