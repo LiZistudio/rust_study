@@ -13,9 +13,7 @@ fn main() {
 
         let mut guess: String = String::new();
 
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("读取用户输入出错！");
+        io::stdin().read_line(&mut guess).expect("读取用户输入出错！");
         println!("你输入的数字是：{guess}");
 
         let guess: u32 = match guess.trim().parse() {
