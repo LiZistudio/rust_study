@@ -1,4 +1,10 @@
+//********************************************************************************************************************/
 //rust structure 使用结构体组织相关联的数据
+//struct，或者 structure，是一个自定义数据类型，允许你命名和包装多个相关的值，从而形成一个有意义的组合。
+//如果你熟悉一门面向对象语言，struct 就像对象中的数据属性。在本章中，我们会对元组和结构体进行比较和对比，
+//以及演示如何定义和实例化结构体，并讨论如何定义关联函数，特别是被称为方法的那种关联函数，以指定与结构体类型相关的行为。
+//你可以在程序中基于结构体和枚举（enum）（在第 6 章介绍）创建新类型，以充分利用 Rust 的编译时类型检查。
+//********************************************************************************************************************/
 
 // struct User {
 //     username: String,
@@ -71,6 +77,11 @@ impl Flower {
     }
 }
 
+struct Persion {
+    name:String,
+    age:i32,
+    weight:i32
+}
 
 
 fn main() {
@@ -89,7 +100,25 @@ fn main() {
     let f1 = Flower::build_flower(String::from("10"), String::from("makabaka"));
     let f2 = Flower::build_flower(String::from("8"), String::from("wuxidixi"));
     
-    println!("The flower1's name is {},The flower's age is {}.",f1.name.red(),f1.age.green());
-    println!("The flower2's name is {},The flower's age is {}.",f2.name.red(),f2.age.green());
-    
+    println!("The flower1's name is {},The flower's age is {}.",f1.name.yellow(),f1.age.green());
+    println!("The flower2's name is {},The flower's age is {}.",f2.name.yellow(),f2.age.green());
+
+    let mut zheng_xu_liang = Persion {
+        name:String::from("Zhao XuLiang"),
+        age:60,
+        weight:300
+    };
+
+    println!("name:{:?},age:{:?},weight:{:?}",zheng_xu_liang.name,zheng_xu_liang.age,zheng_xu_liang.weight);
+    zheng_xu_liang.age = 18;
+    println!("age = {}",zheng_xu_liang.age);
+
+    let kong_kong = build_persion(String::from("kongkong"), 26);
+}
+fn build_persion (name:String,age:i32) -> Persion {
+    Persion{
+        name,
+        age,
+        weight:80,
+    }
 }

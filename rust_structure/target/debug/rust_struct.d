@@ -1,1 +1,1 @@
-E:\Code\Rust\rust_structure\target\debug\rust_struct.exe: E:\Code\Rust\rust_structure\src\main.rs
+D:\rust_study\rust_structure\target\debug\rust_struct.exe: D:\rust_study\rust_structure\src\main.rs
