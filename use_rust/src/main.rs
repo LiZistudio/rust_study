@@ -1,5 +1,8 @@
-use std::collections::HashMap;
+pub use std::collections::HashMap;
 //use std::{fmt,io};
+use rand::Rng;
+use std::io::{self,Write};
+use rand::*;
 
 fn main() {
     eat_at_restaurant("扣三丝", "李华", 0001);
@@ -12,6 +15,10 @@ fn main() {
 
     let result = my_function(3,4);
     println!("map2:{:?}",result);
+
+    //引入外部包（如rand）
+    let my_rand = rand::thread_rng().gen_range(0..100);
+    println!("my_rand is {}",my_rand);
 
 }
 
@@ -35,9 +42,9 @@ mod front_of_house {
     }
 }
 
-use crate::front_of_house::hosting;
+pub use crate::front_of_house::hosting;
 
-pub fn eat_at_restaurant (order_name:&str,name:&str,num:u8) {
+pub fn eat_at_restaurant (food_name:&str,name:&str,num:u8) {
     // //绝对路径
     // crate::front_of_house::hosting::add_to_waitlist();
     // //相对路径
@@ -45,12 +52,12 @@ pub fn eat_at_restaurant (order_name:&str,name:&str,num:u8) {
 
     hosting::Custom::add_to_waitlist(name,num);
 
-    println!("您的客户点的菜是{:?}。",order_name);
+    println!("您的客户点的菜是{:?}。",food_name);
 }
 
 
 //使用 as 关键字提供新的名称
-use std::collections::HashMap as MyHashMap;
+pub use std::collections::HashMap as MyHashMap;
 
 fn my_function (a:i32,b:i32) -> MyHashMap<i32,i32> {
     let mut map2:MyHashMap<i32,i32> = MyHashMap::new();
