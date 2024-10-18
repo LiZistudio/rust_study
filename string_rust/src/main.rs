@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //使用字符串存储 UTF-8 编码的文本
 
 //use std::fmt::format;
@@ -100,4 +101,14 @@ fn main() {
     for b in s8.bytes() {
         print!("{}",b);
     }
+=======
+/*使用字符串储存UTF-8编码的文本*/
+
+fn main() {
+    println!("Hello String");
+    let str1 = String::from("使用字符串储存UTF-8编码的文本");
+    let str2 = "字符串切片";
+    let str3 = &str1[0..6];
+    println!("str1:{:?};str2:{:?};str3:{:?}.",str1,str2,str3);
+>>>>>>> f5fa028c9017bfed838b1718a62864b407bdb6ef
 }
