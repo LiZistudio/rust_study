@@ -16,7 +16,7 @@ fn main() {
 
     //let mut team_score = vec![TeamScore::Team(String::from("Green"))];
 
-    let mut team_score = vec![
+    let team_score = vec![
         TeamScore {
             team:String::from("Green"),
             score:20,
@@ -27,7 +27,7 @@ fn main() {
         },
     ];
     for i in &team_score {
-        //println!("{:?}",i);
+        println!("{:?}",i);
     }
 }
 
@@ -36,6 +36,7 @@ fn main() {
 //     Score(i32),
 // }
 
+#[derive(Debug)]
 struct TeamScore {
     team:String,
     score:i32,
