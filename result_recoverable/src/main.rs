@@ -38,4 +38,21 @@ fn main() {
             other_error => panic!("Not found this file.{:?}",other_error),
         },
     };
+
+    //这里有好多 match！match 确实很强大，不过也非常的基础。第 13 章我们会介绍闭包（closure）。
+    //Result<T, E> 有很多接受闭包的方法，并采用 match 表达式实现。
+    //一个更老练的 Rustacean 可能会这么写：
+    let f = File::open("hello.txt").unwrap_or_else(|error| {
+        if error.kind() == std::io::ErrorKind::NotFound {
+            File::create("hello.txt").unwrap_or_else(|error| {
+                panic!("Problem creating the file: {:?}", error);
+            })
+        } else {
+            panic!("Problem opening the file: {:?}", error);
+        }
+    });
+    //失败时panic！的简写:unwrap或者expect
+    let ff1 = File::open("将进酒.txt").unwrap();
+    let ff2 = File::open("卜算子_咏梅.txt").expect("未能正常打开文件，文件损坏或者不存在。");
+    
 }
