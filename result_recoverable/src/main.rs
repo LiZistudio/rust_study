@@ -1,4 +1,4 @@
-use std::{fs::File, io::Read};
+use std::{fmt::Error, fs::File, io::Read};
 
 
 
@@ -27,5 +27,15 @@ fn main() {
     println!("\n{:?}",ff);
 
     //匹配不同的错误
-    
+    let f = File::open("hello.txt");
+    let f = match f {
+        Ok(file) => file,
+        Err(error) => match error.kind() {
+            std::io::ErrorKind::NotFound => match File::create("hello.txt") {
+                Ok(fc) => fc,
+                Err(e) => panic!("创建文件出错{:?}",e),
+            },
+            other_error => panic!("Not found this file.{:?}",other_error),
+        },
+    };
 }
