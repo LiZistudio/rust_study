@@ -1,1 +1,1 @@
-D:\rust_study\result_recoverable\target\debug\result_recoverable.exe: D:\rust_study\result_recoverable\src\main.rs
+E:\Code\rust_study\result_recoverable\target\debug\result_recoverable.exe: E:\Code\rust_study\result_recoverable\src\main.rs
