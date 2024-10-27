@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    println!("panic_or_no_panic");
 }
