@@ -1,4 +1,7 @@
 fn main() {
+<<<<<<< HEAD
+    println!("panic! and unrecoverable.");
+=======
     println!("unrecoverable and panic!");
     //panic!("crash and burn");
 
@@ -8,4 +11,5 @@ fn main() {
     v1[99];
 
     
+>>>>>>> 2c1011b3d4d8b15e4c345cb5fa0224853107161b
 }

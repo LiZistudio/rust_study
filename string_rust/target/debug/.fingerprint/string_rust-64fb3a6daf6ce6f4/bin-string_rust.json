@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-{"rustc":8728151648326100033,"features":"[]","declared_features":"[]","target":4141273356088141547,"profile":6929766844333714335,"path":1684066648322511884,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"debug\\.fingerprint\\string_rust-64fb3a6daf6ce6f4\\dep-bin-string_rust"}}],"rustflags":[],"metadata":7797948686568424061,"config":2202906307356721367,"compile_kind":0}
-=======
-{"rustc":16073551614293250696,"features":"[]","declared_features":"[]","target":4141273356088141547,"profile":6929766844333714335,"path":10602529704205407992,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"debug\\.fingerprint\\string_rust-64fb3a6daf6ce6f4\\dep-bin-string_rust"}}],"rustflags":[],"metadata":7797948686568424061,"config":2202906307356721367,"compile_kind":0}
->>>>>>> f5fa028c9017bfed838b1718a62864b407bdb6ef

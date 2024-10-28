@@ -8,53 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0274fa0d-9d40-4861-8968-4ca80310048e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/enum_match-cd50aeb08e4199f2/bin-enum_match" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/.fingerprint/enum_match-cd50aeb08e4199f2/bin-enum_match" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/enum_match-cd50aeb08e4199f2/bin-enum_match.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/.fingerprint/enum_match-cd50aeb08e4199f2/bin-enum_match.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/enum_match-cd50aeb08e4199f2/output-bin-enum_match" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/.fingerprint/enum_match-cd50aeb08e4199f2/output-bin-enum_match" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/deps/enum_match.d" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/enum_match.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/deps/enum_match.exe" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/enum_match.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/deps/enum_match.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/enum_match.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/enum_match.d" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/enum_match.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/enum_match.exe" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/enum_match.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/enum_match.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/enum_match.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../string_rust/target/.rustc_info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/deps/string_rust.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../string_rust/target/debug/deps/string_rust.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/deps/string_rust.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../string_rust/target/debug/deps/string_rust.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-19nit905eluol/s-h0sy89ew2b-086whz0-3979fjbg52eoyfx93tqb71z50/dep-graph.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-19nit905eluol/s-h0sy89ew2b-086whz0-3979fjbg52eoyfx93tqb71z50/query-cache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-19nit905eluol/s-h0sy89ew2b-086whz0-3979fjbg52eoyfx93tqb71z50/work-products.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-19nit905eluol/s-h0sy89ew2b-086whz0.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/0kd1954o02dd5odxo3dp4q1or.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/0rduatw6ds7vs80hbbcdnqq8m.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/1ep2otatdn3s6bl79qlbunt2y.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/1lt7w2qpaw2uzge01av5wcl1d.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/20x3aoitjg6guy1wo12ylk1kv.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/372c3r7gs8agx2p4vmwjtggfq.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/40u2vosztwjol83h5zb2ra3yg.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/42zmgepk94u1xn92yy2sz85mo.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/4ppw6vwo0je8jqs6obic3c0zc.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/4s6ug0g0vr7amjxzxwmvg138x.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/5s5lf2svxyy3qs4ku7rtj95t8.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/61p4zy5ux0ok4z76com2m23h0.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/77batbtxow5wvpcknz99w6mb3.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/8o842kzxvbxqpfgwyakjrjvsk.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/b6taec4hpwxcg8mwpd9qijdpl.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/c04nqqphkh5uujwn9pu3up616.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/csi1x8go88jqcoy4g3ip24tet.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/dep-graph.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/dwgbtklmlsicheop0xb77dqcl.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/e9370bcovcfc80ml8oeqxx0jl.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/esv5a4l5uo7g3tc7kua5s71vt.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/query-cache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39-81yutyqve1608sigfntkrg8ou/work-products.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-21zq3eih6dvze/s-h0sy6xkd86-0m43v39.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-25bfz16jd9xtn/s-h0sy89gekx-0jxk8s2-1bptrrdmqjjvud1l68ivtd0ko/dep-graph.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-25bfz16jd9xtn/s-h0sy89gekx-0jxk8s2-1bptrrdmqjjvud1l68ivtd0ko/query-cache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-25bfz16jd9xtn/s-h0sy89gekx-0jxk8s2-1bptrrdmqjjvud1l68ivtd0ko/work-products.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/incremental/string_rust-25bfz16jd9xtn/s-h0sy89gekx-0jxk8s2.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/string_rust.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../string_rust/target/debug/string_rust.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../string_rust/target/debug/string_rust.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../string_rust/target/debug/string_rust.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../result_recoverable/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../result_recoverable/target/.rustc_info.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,30 +20,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main.rs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="0zbnatf2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2nNHX0rL8erCePXiQOzzlKhDapk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cargo.Run enum_match.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "git-widget-placeholder": "main",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "language.rust"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cargo.Run enum_match.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Cargo.Run enum_match">
     <configuration name="Run enum_match" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package enum_match --bin enum_match" />
@@ -136,10 +98,18 @@
       <option name="presentableId" value="Default" />
       <updated>1728806649504</updated>
       <workItem from="1728806650773" duration="216000" />
+      <workItem from="1729999313568" duration="342000" />
+      <workItem from="1729999678455" duration="340000" />
+      <workItem from="1730000028552" duration="514000" />
+      <workItem from="1730000737333" duration="1639000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
