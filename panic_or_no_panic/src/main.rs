@@ -55,4 +55,34 @@ fn main() {
             }
         }
     }
+
+    let guess = Guess::new(77);
+    //println!("{}",guess.value);
+    let guess_value = guess.get_value();
+    println!("{}",guess_value);
+}
+
+
+struct Guess {
+    value:i32,
+}
+
+impl Guess {
+    pub fn new(value:i32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("输入的数值应该在1到100之间。当前输入数值为{:?}",value);
+        }
+        // let guess = Guess {
+        //     value:value,
+        // };
+        // return guess;
+
+        Guess {
+            value
+        }
+    }
+
+    pub fn get_value (&self) -> i32 {
+        self.value
+    }
 }
