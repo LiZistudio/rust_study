@@ -13,7 +13,7 @@ fn main() {
 }
 
 //查找一组数中的最大值
-fn get_max_number(number_list:&Vec<i32>) -> i32 {
+fn get_max_number(number_list:&[i32]) -> i32 {
     let mut max_number = number_list[0];
     for &number in number_list {
         if number > max_number {
