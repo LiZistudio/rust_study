@@ -40,3 +40,4 @@ fn largest_char(list:&[char]) -> char {
 //     max
 // }
 
+//结构体定义中的泛型
