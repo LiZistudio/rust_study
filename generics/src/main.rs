@@ -97,6 +97,22 @@ pub fn result_test() {
     println!("{:?}",file);
 }
 
+//结构体定义中的泛型类型参数并不总是与结构体方法签名中使用的泛型是同一类型。
+//这个例子的目的是展示一些泛型通过 impl 声明而另一些通过方法定义声明的情况。
+#[derive(Debug)]
+struct Poi<T,U> {
+    x:T,
+    y:U,
+}
+impl<T,U> Poi<T,U> {
+    fn miner<V,W> (self,point:Poi<V,W>) -> Poi<T,W> {
+        Poi {
+            x:self.x,
+            y:point.y,
+        }
+    }
+}
+
 fn main() {
     println!("泛型数据类型");
     //在函数定义中使用泛型
@@ -152,4 +168,13 @@ fn main() {
     //泛型枚举类型Result复习
     result_test();
 
+    //方法使用了与结构体定义中不同类型的泛型
+    let point1 = Poi{x:3,y:7.77};
+    let point2 = Poi{x:"color",y:'c'};
+    let point3 = point1.miner(point2);
+    println!("{:?}",point3);
 }
+
+//泛型代码的性能
+//我们可以使用泛型来编写不重复的代码，而 Rust 将会为每一个实例编译其特定类型的代码。
+//这意味着在使用泛型时没有运行时开销；当代码运行，它的执行效率就跟好像手写每个具体定义的重复代码一样。
