@@ -1,6 +1,9 @@
 //use std::collections::HashMap;
 //use std::fs::File;
 
+use core::panic;
+use std::fs::File;
+
 //如下面两个函数分别用来找出最大的i32和char
 fn largest_i32(list:&Vec<i32>) -> i32 {
     let mut max = list[0];
@@ -12,8 +15,8 @@ fn largest_i32(list:&Vec<i32>) -> i32 {
     max
 }
 
-fn largest_char(list:&[char]) -> char {
-                                                    let mut max = list[0];
+fn largest_char(list:&Vec<char>) -> char {
+    let mut max = list[0];
     for &item in list.iter() {
         if item > max {
             max = item;
@@ -40,14 +43,27 @@ struct Point<T> {
     x:T,
     y:T
 }
-
-impl Point<f32> {
-    fn new<T>(x:T,y:T) -> Point<T> {
+//方法定义中的泛型
+//注意必须在 impl 后面声明 T，这样就可以在 Point<T> 上实现的方法中使用它了。
+//在 impl 之后声明泛型 T ，这样 Rust 就知道 Point 的尖括号中的类型是泛型而不是具体类型。
+impl<T> Point<T> {
+    fn new(x:T,y:T) -> Point<T> {
         let point = Point {
             x,
             y
         };
         point
+    }
+}
+//构建一个只用于拥有泛型参数 T 的结构体的具体类型的 impl 块
+impl Point<f32> {
+    fn get_x (&self) -> &f32 {
+        &self.x
+    }
+
+    //计算该点到原点的距离
+    fn get_distance (&self) -> f32 {
+        (&self.x.powi(2)+&self.y.powi(2)).sqrt()
     }
 }
 
@@ -58,6 +74,29 @@ struct Color<S,T> {
     num2:T,
     num3:T
 }
+
+//枚举定义中的泛型
+//首先复习一下Option泛型枚举类型
+pub fn option_test() {
+    let vec1 = vec![1,2,3,4,5,6];
+    let vec2 = vec1.get(2);
+    let vec3 = match vec2 {
+        Some(value) => value,
+        None => panic!("值不存在"),
+    };
+    println!("Option value is {}",vec3);
+}
+//Result泛型枚举类型拥有多个泛型形参
+pub fn result_test() {
+    File::create("水龙吟.txt").expect("创建文件失败");
+    let file1 = File::open("水龙吟.txt");
+    let file = match file1 {
+        Ok(file) => file,
+        Err(error) => panic!("文件打开失败{}",error),
+    };
+    println!("{:?}",file);
+}
+
 fn main() {
     println!("泛型数据类型");
     //在函数定义中使用泛型
@@ -66,8 +105,10 @@ fn main() {
     let char_list = vec!['a','f','e','h','z'];
     println!("{:?}",largest_char(&char_list));
 
-    let point_a = Point::new(3.33, 5.55);
+    let point_a:Point<f32> = Point::new(3.33, 4.44);
     println!("{:?}",point_a);
+    println!("{:?}",point_a.get_x());
+    println!("{:?}",point_a.get_distance());
 
     let point_b = Point::new(1, 2);
     println!("{:?}",point_b);
@@ -99,10 +140,16 @@ fn main() {
     //let f2 = File::open("蜀道难.txt").expect("打开错误");
     //let f3 = File::open("论持久战.txt")?;
 
-    let colo1 = Color {
+    let _colo1 = Color {
         str:String::from("Blue"),
         num1:0,
         num2:0,
         num3:255
     };
+
+    //泛型枚举类型Option复习
+    option_test();
+    //泛型枚举类型Result复习
+    result_test();
+
 }
