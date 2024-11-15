@@ -9,7 +9,11 @@ use core::panic;
 //一个类型的行为由其可供调用的方法构成。如果可以对不同类型调用相同的方法的话，这些类型就可以共享相同的行为了。
 //trait 定义是一种将方法签名组合起来的方法，目的是定义一个实现某些目的所必需的行为的集合。
 pub trait Summary {
-    fn summarize(&self) -> String;
+    //fn summarize(&self) -> String;
+    //trait的默认实现
+    fn summarize (&self) -> String {
+        String::from("(read more...)")
+    }
 }
 
 pub struct NewsAtricle {
@@ -48,6 +52,12 @@ impl Summary for Vec<i32> {
     }
 }
 
+//默认实现
+impl Summary for Vec<&str> {}
+
+//trait作为参数
+
+
 fn main() {
     //定义trait
     let tweet = Tweet {
@@ -61,4 +71,8 @@ fn main() {
     let vec = vec![1,2,3,4,5,6];
     let str1 = vec.summarize();
     println!("{:?}",str1);
+
+    let str1 = vec!["卜算子","清平乐","念奴娇","菩萨蛮","如梦令"];
+    let str = str1.summarize();
+    println!("{}",str);
 }
