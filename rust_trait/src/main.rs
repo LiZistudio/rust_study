@@ -54,6 +54,16 @@ impl Summary for Vec<i32> {
 
 //默认实现
 impl Summary for Vec<&str> {}
+// impl Summary for Vec<&str> {
+//     fn summarize (&self) -> String {
+//         let item1 = self.get(2);
+//         let str1 = match item1 {
+//             Some(str) => str,
+//             None => panic!("Error"),
+//         };
+//         str1.to_string()
+//     }
+// }
 
 //trait作为参数
 
@@ -72,7 +82,7 @@ fn main() {
     let str1 = vec.summarize();
     println!("{:?}",str1);
 
-    let str1 = vec!["卜算子","清平乐","念奴娇","菩萨蛮","如梦令"];
+    let str1 = vec!["《卜算子》","《清平乐》","《念奴娇》","《菩萨蛮》","《如梦令》"];
     let str = str1.summarize();
     println!("{}",str);
 }
