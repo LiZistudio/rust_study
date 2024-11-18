@@ -66,6 +66,11 @@ impl Summary for Vec<&str> {}
 // }
 
 //trait作为参数
+pub fn notify (item: impl Summary) {
+    println!("Breaking news {}",item.summarize());
+}
+
+//trait buond 语法
 
 
 fn main() {
@@ -85,4 +90,10 @@ fn main() {
     let str1 = vec!["《卜算子》","《清平乐》","《念奴娇》","《菩萨蛮》","《如梦令》"];
     let str = str1.summarize();
     println!("{}",str);
+
+    //trait作为参数
+    notify(tweet);
+    notify(vec);
+    notify(str1);
+
 }
