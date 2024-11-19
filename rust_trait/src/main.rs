@@ -92,11 +92,19 @@ pub fn _notify<T:Summary+Display> (item:T) {
 //fn some_function (item1:impl Display+Debug,item2:impl Clone+Debug) ->i32 {0}  //impl trait写法
 //fn some_function <T:Clone+Debug,U:Display+Clone> (item1:T,item2:U)->i32 {0}
  fn _some_function<T,U> (_t:T,_u:U) ->i32 
- where T:Display+Debug,U:Clone+Debug {0}    //where引导的条件状语从句
+ where T:Display+Debug,U:Clone+Debug {0}    //where引导的从句,trait bound语法糖
 
  //返回实现了trait的类型
+fn _function3 () -> impl Summary {
+    let tweet = Tweet {
+        username:String::from("value"),
+        content:String::from("value"),
+        reply:true,
+        retweet:false,
+    };
+    tweet
+}
 
- 
 fn main() {
     //定义trait
     let tweet = Tweet {
