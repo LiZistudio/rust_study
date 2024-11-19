@@ -66,11 +66,18 @@ impl Summary for Vec<&str> {}
 // }
 
 //trait作为参数
-pub fn notify (item: impl Summary) {
+// pub fn notify (item: impl Summary) {     //trait bound 的语法糖
+//     println!("Breaking news {}",item.summarize());
+// }
+
+//trait buond 语法
+//impl Trait 语法适用于直观的例子，它实际上是一种较长形式语法的语法糖。我们称为 trait bound，它看起来像：
+pub fn notify<T:Summary> (item:T) {
     println!("Breaking news {}",item.summarize());
 }
 
-//trait buond 语法
+pub fn function1 (_item1:impl Summary, _item2:impl Summary) {}  //这允许_item1和_item2的具体类型不一致，只要都实现了Summary这个trait.
+pub fn function2<T:Summary> (_item1:T,_item2:T) {}  //这样就能强制使_item1和_item2的具体类型是一致的.
 
 
 fn main() {
