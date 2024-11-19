@@ -4,6 +4,7 @@
 //注意：trait 类似于其他语言中常被称为 接口（interfaces）的功能，虽然有一些不同。
 
 use core::panic;
+use std::fmt::{Debug, Display};
 
 //定义trait
 //一个类型的行为由其可供调用的方法构成。如果可以对不同类型调用相同的方法的话，这些类型就可以共享相同的行为了。
@@ -79,7 +80,23 @@ pub fn notify<T:Summary> (item:T) {
 pub fn function1 (_item1:impl Summary, _item2:impl Summary) {}  //这允许_item1和_item2的具体类型不一致，只要都实现了Summary这个trait.
 pub fn function2<T:Summary> (_item1:T,_item2:T) {}  //这样就能强制使_item1和_item2的具体类型是一致的.
 
+//通过"+"指定多个trait bound
+//如果 notify 需要显示 item 的格式化形式，同时也要使用 summarize 方法，那么 item 就需要同时实现两个不同的 trait：Display 和 Summary。这可以通过 + 语法实现：
+pub fn _notify<T:Summary+Display> (item:T) {
+    println!("Breaking news {}",item.summarize());
+}
+//or
+//pub fn _notify(item:impl Summary+Display) {}
 
+//通过where简化trait bound 
+//fn some_function (item1:impl Display+Debug,item2:impl Clone+Debug) ->i32 {0}  //impl trait写法
+//fn some_function <T:Clone+Debug,U:Display+Clone> (item1:T,item2:U)->i32 {0}
+ fn _some_function<T,U> (_t:T,_u:U) ->i32 
+ where T:Display+Debug,U:Clone+Debug {0}    //where引导的条件状语从句
+
+ //返回实现了trait的类型
+
+ 
 fn main() {
     //定义trait
     let tweet = Tweet {
