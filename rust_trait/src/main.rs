@@ -17,13 +17,13 @@ pub trait Summary {
     }
 }
 
-pub struct NewsAtricle {
+pub struct NewsArticle {
     pub headline : String,
     pub location : String,
     pub author : String,
     pub content : String,
 }
-impl Summary for NewsAtricle {
+impl Summary for NewsArticle {
     fn summarize(&self) -> String {
         format!("{},by {} ({})",self.headline,self.author,self.location)
     }
@@ -104,6 +104,45 @@ fn _function3 () -> impl Summary {
     };
     tweet
 }
+//不过这只适用于返回单一类型的情况。例如，这段代码的返回值类型指定为返回 impl Summary，但是返回了 NewsArticle 或 Tweet 就行不通：
+fn _returns_summarizable(switch: bool) -> impl Summary {
+    if switch {
+        NewsArticle {
+            headline: String::from("Penguins win the Stanley Cup Championship!"),
+            location: String::from("Pittsburgh, PA, USA"),
+            author: String::from("Iceburgh"),
+            content: String::from("The Pittsburgh Penguins once again are the best
+            hockey team in the NHL."),
+        }
+    } else {
+        // Tweet {
+        //     username: String::from("horse_ebooks"),
+        //     content: String::from("of course, as you probably already know, people"),
+        //     reply: false,
+        //     retweet: false,
+        // }
+        NewsArticle {
+            headline: String::from("test"),
+            location: String::from("test"),
+            author: String::from("test"),
+            content: String::from("test"),
+        }
+    }
+}
+
+//使用 trait bounds 来修复 largest 函数
+fn _largest<T> (list:&mut Vec<T>) -> T where T:PartialOrd+Copy {
+    let mut max = list[0];
+    for &item in list.iter() {
+        if item > max {
+            max = item;
+        }
+    }
+    max
+}
+
+//使用trait bound有条件地实现方法
+
 
 fn main() {
     //定义trait
