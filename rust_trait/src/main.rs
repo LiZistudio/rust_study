@@ -4,7 +4,7 @@
 //注意：trait 类似于其他语言中常被称为 接口（interfaces）的功能，虽然有一些不同。
 
 use core::panic;
-use std::fmt::{Debug, Display};
+use std::{fmt::{Debug, Display}};
 
 //定义trait
 //一个类型的行为由其可供调用的方法构成。如果可以对不同类型调用相同的方法的话，这些类型就可以共享相同的行为了。
@@ -142,7 +142,43 @@ fn _largest<T> (list:&mut Vec<T>) -> T where T:PartialOrd+Copy {
 }
 
 //使用trait bound有条件地实现方法
+//通过使用带有 trait bound 的泛型参数的 impl 块，可以有条件地只为那些实现了特定 trait 的类型实现方法。
+struct Pair<T> {
+    x:T,
+    y:T,
+}
+impl<T> Pair<T> {
+    fn new (x:T,y:T) -> Pair<T> {
+        Pair {
+            x,
+            y,
+        }
+    }
+}
+impl<T:PartialOrd+Display+Debug> Pair<T> {
+    fn cmp_display (&self) {
+        if self.x < self.y {
+            println!("这对元素中最大的是:{:?}",self.y);
+        }else if self.x > self.y {
+            println!("这对元素中最大的是:{:?}",self.x);
+        }else {
+            println!("这对元素是相等的");
+        }
+    }
+}
 
+
+//也可以对任何实现了特定 trait 的类型有条件地实现 trait。
+//对任何满足特定 trait bound 的类型实现 trait 被称为 blanket implementations，他们被广泛的用于 Rust 标准库中。
+//例如，标准库为任何实现了 Display trait 的类型实现了 ToString trait。这个 impl 块看起来像这样：
+trait MyToString {
+    fn my_to_string (&self) -> String;
+}
+impl<T:Display> MyToString for T {
+    fn my_to_string (&self) -> String {
+        self.to_string()
+    }
+}
 
 fn main() {
     //定义trait
@@ -167,4 +203,19 @@ fn main() {
     notify(vec);
     notify(str1);
 
+    //使用trait bound 有条件的实现方法
+    let pair1 = Pair::new(3, 7);
+    pair1.cmp_display();
+    let pair2 = Pair::new('a', 'b');
+    pair2.cmp_display();
+    let pair3 = Pair::new(3.33, 3.33);
+    pair3.cmp_display();
+
+    //为实现了特定trait的类型实现trait(blanket implementations)
+    let str7 = "友谊地久天长";
+    println!("{:?}",str7.my_to_string());
+    let _str9 = "我的团长我的团".my_to_string();
+    let phone_number = 110119120.my_to_string();
+    println!("{:?}",phone_number);
+    
 }
