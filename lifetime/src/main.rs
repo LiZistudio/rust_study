@@ -10,7 +10,17 @@
 //在编译时，Rust 比较这两个生命周期的大小，并发现 r 拥有生命周期 'a，不过它引用了一个拥有生命周期 'b 的对象。
 //程序被拒绝编译，因为生命周期 'b 比生命周期 'a 要小：被引用的对象比它的引用者存在的时间更短。
 
+
+
 //-----------------snip---------------------函数中的泛型生命周期
+// fn longest (string1:&str,string2:&str) ->&str {
+//     if string1.len() > string2.len() {
+//         string1
+//     }else {
+//         string2
+//     }
+// }        //示例 10-21：一个 longest 函数的实现，它返回两个字符串 slice 中较长者，现在还不能编译
+
 fn longest (str1:&str,str2:&str) -> String {
     if str1.len() > str2.len() {
         str1.to_string()
@@ -21,6 +31,11 @@ fn longest (str1:&str,str2:&str) -> String {
         String::from("==")
     }
 }
+//-----snip-----因为 Rust 并不知道将要返回的引用是指向 x 或 y。事实上我们也不知道，因为函数体中 if 块返回一个 x 的引用而 else 块返回一个 y 的引用！
+
+
+//-----------------snip-----------------生命周期标注语法
+
 
 fn main() {
     println!("生命周期与引用有效性");
@@ -62,9 +77,14 @@ fn main() {
     }
     //-----------------------snip--------------------------示例 10-19：一个有效的引用，因为数据比引用有着更长的生命周期
 
-    //----------------snip--------------------main 函数调用 longest 函数来寻找两个字符串 slice 中较长的一个
+
+    //----------------snip--------------------示例 10-20：main 函数调用 longest 函数来寻找两个字符串 slice 中较长的一个
     let string1 = "hello";
     let string2 = "Never ever ever give up.";
     let result = longest(string1, string2);
     println!("The longest is :{:?}",result);
+    //------------------------------------------snip---------------------------------------------------
+
+    //--------------snip-------------生命周期标注语法
+
 }
