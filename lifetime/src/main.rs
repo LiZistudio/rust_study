@@ -93,6 +93,7 @@ fn main() {
     let string2 = "Never ever ever give up.";
     let result = longest(string1, string2);
     println!("The longest is :{:?}",result);
+    println!("{:?}",lonest("aaa","abcdefg"));
     //------------------------------------------snip---------------------------------------------------
 
 }
