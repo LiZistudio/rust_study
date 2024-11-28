@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="69d075c5-0e82-4267-85e9-2e6da76b53b8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/enum_match.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/.idea/lifetime.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/target/.rustc_info.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/target/CACHEDIR.TAG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/target/debug/.cargo-lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/target/debug/.fingerprint/lifetime-7e393194d7f06a2f/bin-lifetime" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/target/debug/.fingerprint/lifetime-7e393194d7f06a2f/bin-lifetime.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/target/debug/.fingerprint/lifetime-7e393194d7f06a2f/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/target/debug/.fingerprint/lifetime-b9cdea282c8a7003/invoked.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/target/debug/.fingerprint/lifetime-b9cdea282c8a7003/test-bin-lifetime" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lifetime/target/debug/.fingerprint/lifetime-b9cdea282c8a7003/test-bin-lifetime.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="pm8fgt2z" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2pQ3sOuHaNxiA0uxhwu13W2VoWo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/Code/rust_study/lifetime",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.first.attach.projects": "true",
+    "settings.editor.selected.configurable": "settings.sync"
+  }
+}]]></component>
+  <component name="RunManager" selected="Cargo.Run enum_match">
+    <configuration name="Run enum_match" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="run --package enum_match --bin enum_match" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test enum_match" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="test --workspace" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="69d075c5-0e82-4267-85e9-2e6da76b53b8" name="Changes" comment="" />
+      <created>1732684677796</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732684677796</updated>
+      <workItem from="1732684679092" duration="114000" />
+      <workItem from="1732791482138" duration="54000" />
+      <workItem from="1732791540244" duration="257000" />
+      <workItem from="1732791806590" duration="111000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
