@@ -46,6 +46,11 @@ fn longest (str1:&str,str2:&str) -> String {
 fn lonest<'a> (str1:&'a str,str2:&'a str) -> &'a str {
     if str1.len() > str2.len() { str1 }else { str2 }
 }
+//现在函数签名表明对于某些生命周期 'a，函数会获取两个参数，他们都是与生命周期 'a 存在的一样长的字符串 slice。
+//函数会返回一个同样也与生命周期 'a 存在的一样长的字符串 slice。它的实际含义是 lonest 函数返回的引用的生命周期与传入该函数的引用的生命周期的较小者一致。
+//示例 10-22：longest 函数定义指定了签名中所有的引用必须有相同的生命周期 'a---------------snip----------------
+
+
 
 fn main() {
     println!("生命周期与引用有效性");
