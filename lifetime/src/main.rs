@@ -108,5 +108,15 @@ fn main() {
         let result = lonest(s1.as_str(),s2.as_str());
         println!("最长的一句话是:{:?}",result);
     }
-
+    //------snip-------上面这段是可以正常编译的
+    /*let s3 = String::from("秦皇汉武，略输文采。唐宗宋祖，稍逊风骚。");
+    let result;
+    {
+        let s4 = String::from("一代天骄，成吉思汗，只识弯弓射大雕。");
+        result = lonest(s3.as_str(),s4.as_str());       //borrowed value does not live long enough
+    }
+    println!("{:?}",result);*/
+    //----------------snip-------------上面这段是无法编译的
+    
+    
 }
