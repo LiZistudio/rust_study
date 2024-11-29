@@ -171,7 +171,7 @@ impl<T:PartialOrd+Display+Debug> Pair<T> {
 //也可以对任何实现了特定 trait 的类型有条件地实现 trait。
 //对任何满足特定 trait bound 的类型实现 trait 被称为 blanket implementations，他们被广泛的用于 Rust 标准库中。
 //例如，标准库为任何实现了 Display trait 的类型实现了 ToString trait。这个 impl 块看起来像这样：
-trait MyToString {
+pub trait MyToString {
     fn my_to_string (&self) -> String;
 }
 impl<T:Display> MyToString for T {
