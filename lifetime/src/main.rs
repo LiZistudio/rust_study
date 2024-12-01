@@ -21,7 +21,8 @@
 //     }
 // }        //示例 10-21：一个 longest 函数的实现，它返回两个字符串 slice 中较长者，现在还不能编译
 
-fn longest (str1:&str,str2:&str) -> String {
+
+fn longest (str1:&str, str2:&str) -> String {
     if str1.len() > str2.len() {
         str1.to_string()
     }else if str1.len() < str2.len() {
@@ -50,6 +51,23 @@ fn lonest<'a> (str1:&'a str,str2:&'a str) -> &'a str {
 //函数会返回一个同样也与生命周期 'a 存在的一样长的字符串 slice。它的实际含义是 lonest 函数返回的引用的生命周期与传入该函数的引用的生命周期的较小者一致。
 //示例 10-22：longest 函数定义指定了签名中所有的引用必须有相同的生命周期 'a---------------snip----------------
 
+
+//-------------------snip--------------深入理解生命周期
+/*指定生命周期参数的正确方式依赖函数实现的具体功能。*/
+//例如，如果将 longest 函数的实现修改为总是返回第一个参数而不是最长的字符串 slice，就不需要为参数 y 指定一个生命周期。如下代码将能够编译:
+fn longest2<'a> (x: &'a str,y: &str) -> &'a str {
+    x
+}
+//综上，生命周期语法是用于将函数的多个参数与其返回值的生命周期进行关联的。
+//一旦他们形成了某种关联，Rust 就有了足够的信息来允许内存安全的操作并阻止会产生悬垂指针亦或是违反内存安全的行为。
+
+
+//--------------snip---------结构体定义中的生命周期标注
+//示例 10-25 中有一个存放了一个字符串 slice 的结构体 ImportantExcerpt：
+#[derive(Debug)]
+struct ImportantExcerpt<'a> {
+    part: &'a str,
+}
 
 
 fn main() {
@@ -118,5 +136,17 @@ fn main() {
     println!("{:?}",result);*/
     //----------------snip-------------上面这段是无法编译的
     
-    
+
+    //-----------snip------------示例 10-25：一个存放引用的结构体，所以其定义需要生命周期标注
+    let novel = String::from("Call me Ishmael. Some years ago...");
+    let first_sentence = novel.split('.')
+        .next()
+        .expect("Could not find a '.'");
+    let i = ImportantExcerpt{ part:first_sentence, };
+    println!("{:?}",i);
+    //这里的 main 函数创建了一个 ImportantExcerpt 的实例，它存放了变量 novel 所拥有的 String 的第一个句子的引用。
+    // novel 的数据在 ImportantExcerpt 实例创建之前就存在。
+    // 另外，直到 ImportantExcerpt 离开作用域之后 novel 都不会离开作用域，所以 ImportantExcerpt 实例中的引用是有效的。
+
+
 }
