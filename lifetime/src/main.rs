@@ -101,4 +101,22 @@ fn main() {
     println!("{:?}",lonest("aaa","abcdefg"));
     //------------------------------------------snip---------------------------------------------------
 
+    //通过传递拥有不同具体生命周期的引用来限制lonest函数的使用
+    let s1 = String::from("大江东去，浪淘尽，千古风流人物。");
+    {
+        let s2 = String::from("千古风流人物，还看今朝。");
+        let result = lonest(s1.as_str(),s2.as_str());
+        println!("最长的一句话是:{:?}",result);
+    }
+    //------snip-------上面这段是可以正常编译的
+    /*let s3 = String::from("秦皇汉武，略输文采。唐宗宋祖，稍逊风骚。");
+    let result;
+    {
+        let s4 = String::from("一代天骄，成吉思汗，只识弯弓射大雕。");
+        result = lonest(s3.as_str(),s4.as_str());       //borrowed value does not live long enough
+    }
+    println!("{:?}",result);*/
+    //----------------snip-------------上面这段是无法编译的
+    
+    
 }
