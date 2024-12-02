@@ -69,6 +69,21 @@ struct ImportantExcerpt<'a> {
     part: &'a str,
 }
 
+//生命周期省略（Lifetime Elision）
+//示例 10-26：示例 4-9 定义了一个没有使用生命周期标注的函数，即便其参数和返回值都是引用
+fn first_word (s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
+}
+//函数或方法的参数的生命周期被称为 输入生命周期（input lifetimes），而返回值的生命周期被称为 输出生命周期（output lifetimes）。
+
 
 fn main() {
     println!("生命周期与引用有效性");
