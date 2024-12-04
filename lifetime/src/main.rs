@@ -21,6 +21,7 @@
 //     }
 // }        //示例 10-21：一个 longest 函数的实现，它返回两个字符串 slice 中较长者，现在还不能编译
 
+use std::fmt::Display;
 
 fn longest (str1:&str, str2:&str) -> String {
     if str1.len() > str2.len() {
@@ -99,6 +100,20 @@ impl<'a> ImportantExcerpt<'a> {
 
 //静态生命周期
 //这里有一种特殊的生命周期值得讨论：'static，其生命周期能够存活于整个程序期间。所有的字符串字面量都拥有 'static 生命周期，我们也可以选择像下面这样标注出来：
+
+
+//结合泛型类型参数、trait bounds和生命周期
+fn longest_with_an_announcement<'a,T> (x:&'a str,y:&'a str,ann:T) -> &'a str
+where T:Display
+{
+    println!("{}",ann);
+    if x > y {
+        x
+    }else {
+        y
+    }
+}
+
 
 fn main() {
     println!("生命周期与引用有效性");
@@ -179,11 +194,16 @@ fn main() {
     // 另外，直到 ImportantExcerpt 离开作用域之后 novel 都不会离开作用域，所以 ImportantExcerpt 实例中的引用是有效的。
 
 
+    //静态生命周期
     //这里有一种特殊的生命周期值得讨论：'static，其生命周期能够存活于整个程序期间。所有的字符串字面量都拥有 'static 生命周期，我们也可以选择像下面这样标注出来：
     let my_string:&'static str = "静态生命周期";
     //这个字符串的文本被直接储存在程序的二进制文件中而这个文件总是可用的。因此所有的字符串字面量都是 'static 的。
-    
-    
-    
-    
+
+
 }
+
+
+/*现在你知道了泛型类型参数、trait 和 trait bounds 以及泛型生命周期类型，你已经准备好编写既不重复又能适用于多种场景的代码了。
+泛型类型参数意味着代码可以适用于不同的类型。trait 和 trait bounds 保证了即使类型是泛型的，这些类型也会拥有所需要的行为。
+由生命周期标注所指定的引用生命周期之间的关系保证了这些灵活多变的代码不会出现悬垂引用。*/
+
