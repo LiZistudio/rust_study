@@ -85,6 +85,21 @@ fn first_word (s: &str) -> &str {
 //函数或方法的参数的生命周期被称为 输入生命周期（input lifetimes），而返回值的生命周期被称为 输出生命周期（output lifetimes）。
 
 
+//方法定义中的生命周期标注
+impl<'a> ImportantExcerpt<'a> {
+    fn level (&self) -> i32 {
+        0
+    }
+
+    fn announce_and_return_part (&self,announce:&str) -> &str { //第三条生命周期省略规则
+        println!("Attention please:{:?}",announce);
+        self.part
+    }
+}
+
+//静态生命周期
+//这里有一种特殊的生命周期值得讨论：'static，其生命周期能够存活于整个程序期间。所有的字符串字面量都拥有 'static 生命周期，我们也可以选择像下面这样标注出来：
+
 fn main() {
     println!("生命周期与引用有效性");
 
@@ -164,4 +179,11 @@ fn main() {
     // 另外，直到 ImportantExcerpt 离开作用域之后 novel 都不会离开作用域，所以 ImportantExcerpt 实例中的引用是有效的。
 
 
+    //这里有一种特殊的生命周期值得讨论：'static，其生命周期能够存活于整个程序期间。所有的字符串字面量都拥有 'static 生命周期，我们也可以选择像下面这样标注出来：
+    let my_string:&'static str = "静态生命周期";
+    //这个字符串的文本被直接储存在程序的二进制文件中而这个文件总是可用的。因此所有的字符串字面量都是 'static 的。
+    
+    
+    
+    
 }
