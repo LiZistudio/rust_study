@@ -1,3 +1,3 @@
 fn main() {
-    println!("Rust 编写测试");
+    println!("Rust 编写自动化测试");
 }
