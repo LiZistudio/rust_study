@@ -13,4 +13,13 @@ mod tests {
         let result = add(2, 2);
         assert_eq!(result, 4);
     }
+
+    #[test]
+    fn exploration() {
+        let result = add(3, 3);
+        assert_eq!(result,7);
+    }
 }
+
+//---------------snip----------------由 cargo new 自动生成的测试模块和函数
+
