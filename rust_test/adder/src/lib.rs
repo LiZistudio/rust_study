@@ -4,8 +4,13 @@ pub fn add(left: u64, right: u64) -> u64 {
     left + right
 }
 
+//使用 assert! 宏来检查结果
+
+
 #[cfg(test)]
 mod tests {
+    use core::panic;
+
     use super::*;
 
     #[test]
@@ -17,7 +22,12 @@ mod tests {
     #[test]
     fn exploration() {
         let result = add(3, 3);
-        assert_eq!(result,7);
+        assert_eq!(result,6);
+    }
+
+    #[test]
+    fn another() {
+        panic!("Make this test fail");
     }
 }
 
