@@ -5,7 +5,18 @@ pub fn add(left: u64, right: u64) -> u64 {
 }
 
 //使用 assert! 宏来检查结果
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
 
+impl Rectangle {
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+}
+//-----------------------snip----------------------------------
 
 #[cfg(test)]
 mod tests {
@@ -25,10 +36,19 @@ mod tests {
         assert_eq!(result,6);
     }
 
+    // #[test]
+    // fn another() {
+    //     panic!("Make this test fail");
+    // }
+
     #[test]
-    fn another() {
-        panic!("Make this test fail");
+    fn larger_can_hold_smaller() {
+        let larger = Rectangle { width: 8, height: 7 };
+        let smaller = Rectangle { width: 5, height: 1 };
+
+        assert!(larger.can_hold(&smaller));
     }
+
 }
 
 //---------------snip----------------由 cargo new 自动生成的测试模块和函数
