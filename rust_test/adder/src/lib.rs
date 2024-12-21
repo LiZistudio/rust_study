@@ -49,6 +49,14 @@ mod tests {
         assert!(larger.can_hold(&smaller));
     }
 
+    #[test]
+    fn smaller_cannot_hold_larger() {
+        let larger = Rectangle { width: 8, height: 7 };
+        let smaller = Rectangle { width: 5, height: 1 };
+
+        assert!(!smaller.can_hold(&larger));
+    }
+    
 }
 
 //---------------snip----------------由 cargo new 自动生成的测试模块和函数
