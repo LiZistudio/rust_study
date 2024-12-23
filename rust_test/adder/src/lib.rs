@@ -82,7 +82,7 @@ mod tests {
     #[test] 
     fn greeting_contains_name() {
         let result = greeting("Carol");
-        assert!(result.contains("Carol"),"函数greeting的结果没有包含名字，结果为{}",result);
+        assert!(result.contains("Carol"),"函数greeting的结果没有包含名字,结果为{}",result);
         
     }
 
