@@ -33,7 +33,20 @@ pub fn greeting(name:&str) -> String {
 //------------------------snip----------------------------------
 
 //使用should_panic检查pianc
+pub struct Guess {
+    value:i32,
+}
 
+impl Guess {
+    pub fn new (value:i32) -> Guess {
+        if value<1 || value>100 {
+            panic!("猜测数必须在1~100之间,现值为{}。",value);
+        }
+        Guess {
+            value
+        }
+    }
+}
 
 #[cfg(test)]
 mod tests {
@@ -84,6 +97,13 @@ mod tests {
         let result = greeting("Carol");
         assert!(result.contains("Carol"),"函数greeting的结果没有包含名字,结果为{}",result);
         
+    }
+
+    //--------------should_panic----------------
+    #[test]
+    #[should_panic]
+    fn smaller_than_1() {
+        Guess::new(0);
     }
 
 }
