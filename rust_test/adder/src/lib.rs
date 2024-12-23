@@ -18,10 +18,25 @@ impl Rectangle {
 }
 //-----------------------snip----------------------------------
 
+
+//使用assert_eq!和assert_ne!宏来测试相等
+pub fn add_two (a:i32) -> i32 {
+    a + 2
+}
+//-------------------------snip----------------------------------
+
+//自定义失败信息
+pub fn greeting(name:&str) -> String {
+    //format!("Hello {}!",name)
+    String::from("Hello")
+}
+//------------------------snip----------------------------------
+
+//使用should_panic检查pianc
+
+
 #[cfg(test)]
 mod tests {
-    use core::panic;
-
     use super::*;
 
     #[test]
@@ -56,7 +71,21 @@ mod tests {
 
         assert!(!smaller.can_hold(&larger));
     }
-    
+
+
+    #[test]
+    fn it_adds_two() {
+        let a = 10;
+        assert_eq!(12,add_two(a));
+    }
+
+    #[test] 
+    fn greeting_contains_name() {
+        let result = greeting("Carol");
+        assert!(result.contains("Carol"),"函数greeting的结果没有包含名字，结果为{}",result);
+        
+    }
+
 }
 
 //---------------snip----------------由 cargo new 自动生成的测试模块和函数
