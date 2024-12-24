@@ -4,6 +4,7 @@ pub fn add(left: u64, right: u64) -> u64 {
     left + right
 }
 
+
 //使用 assert! 宏来检查结果
 #[derive(Debug)]
 struct Rectangle {
@@ -19,11 +20,13 @@ impl Rectangle {
 //-----------------------snip----------------------------------
 
 
+
 //使用assert_eq!和assert_ne!宏来测试相等
 pub fn add_two (a:i32) -> i32 {
     a + 2
 }
 //-------------------------snip----------------------------------
+
 
 //自定义失败信息
 pub fn greeting(name:&str) -> String {
@@ -31,6 +34,7 @@ pub fn greeting(name:&str) -> String {
     String::from("Hello")
 }
 //------------------------snip----------------------------------
+
 
 //使用should_panic检查pianc
 pub struct Guess {
@@ -47,6 +51,8 @@ impl Guess {
         }
     }
 }
+//----------------snip-------------------
+
 
 #[cfg(test)]
 mod tests {
