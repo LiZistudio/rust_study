@@ -1,5 +1,8 @@
 // /作为最简单例子，Rust 中的测试就是一个带有 test 属性标注的函数。
 
+use core::panic;
+use std::fs::File;
+
 pub fn add(left: u64, right: u64) -> u64 {
     left + right
 }
@@ -30,8 +33,8 @@ pub fn add_two (a:i32) -> i32 {
 
 //自定义失败信息
 pub fn greeting(name:&str) -> String {
-    //format!("Hello {}!",name)
-    String::from("Hello")
+    format!("Hello {}!",name)
+    //String::from("Hello")
 }
 //------------------------snip----------------------------------
 
@@ -40,11 +43,23 @@ pub fn greeting(name:&str) -> String {
 pub struct Guess {
     value:i32,
 }
-
+// impl Guess {
+//     pub fn new (value:i32) -> Guess {
+//         if value<1 || value>100 {
+//             panic!("猜测数必须在1~100之间,现值为{}。",value);
+//         }
+//         Guess {
+//             value
+//         }
+//     }
+// }
+//示例 11-9：一个会带有特定错误信息的 panic! 条件的测试
 impl Guess {
-    pub fn new (value:i32) -> Guess {
-        if value<1 || value>100 {
-            panic!("猜测数必须在1~100之间,现值为{}。",value);
+    pub fn new(value:i32) -> Guess {
+        if value < 1 {
+            panic!("猜测值应该大于或等于1,但是当前的猜测值为{}",value);
+        }else if value > 100 {
+            panic!("猜测值应该小于或等于100,但是当前的猜测值为{}",value);
         }
         Guess {
             value
@@ -54,8 +69,21 @@ impl Guess {
 //----------------snip-------------------
 
 
+
+//将Result<T,E>用于测试
+fn create_file (a:&str) -> File{
+    let file = File::create(a).expect("文件创建失败");
+    file
+    // let file = match file {
+    //     Ok(file) => file,
+    //     Err(error) => panic!("文件创建失败"),
+    // };
+}
+
 #[cfg(test)]
 mod tests {
+    use std::io::Write;
+
     use super::*;
 
     #[test]
@@ -107,12 +135,27 @@ mod tests {
 
     //--------------should_panic----------------
     #[test]
-    #[should_panic]
+    #[should_panic(expected = "猜测值应该大于或等于1")]
     fn smaller_than_1() {
         Guess::new(0);
     }
+    #[test]
+    #[should_panic(expected = "猜测值应该小于或等于100")]
+    fn greater_than_100() {
+        Guess::new(200);
+    }
 
+    #[test]
+    fn create_file_success() {
+        let mut my_file = create_file("readme.md");
+        for i in 1..1000 {
+            if i%2==0 {
+                my_file.write(b"\n# To be or not to be , this is a question.").expect("写入失败");
+            }else {
+                my_file.write(b"\n## To be or not to be , this is a question.").expect("写入失败");
+            }
+        }
+    }
 }
 
 //---------------snip----------------由 cargo new 自动生成的测试模块和函数
-
