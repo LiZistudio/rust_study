@@ -82,7 +82,8 @@ fn create_file (a:&str) -> File{
 
 #[cfg(test)]
 mod tests {
-    use std::io::Write;
+    use core::time;
+    use std::{io::Write, os::windows::fs::FileExt, thread::sleep};
 
     use super::*;
 
@@ -147,13 +148,18 @@ mod tests {
 
     #[test]
     fn create_file_success() {
+        let one_millis = time::Duration::from_millis(1);
         let mut my_file = create_file("readme.md");
-        for i in 1..10 {
+        for i in 1..11 {
             if i%2==0 {
-                my_file.write(b"\n# To be or not to be , this is a question.").expect("写入失败");
+                my_file.write(b"\n# To be or not to be , this is a question.")
+                .expect("写入失败");
             }else {
-                my_file.write(b"\n## To be or not to be , this is a question.").expect("写入失败");
+                //my_file.write(b"\n## To be or not to be , this is a question.").expect("写入失败");
+                my_file.seek_write(b"---",0)
+                .expect("写入失败");
             }
+            sleep(one_millis);
         }
     }
 }
