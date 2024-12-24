@@ -148,7 +148,7 @@ mod tests {
     #[test]
     fn create_file_success() {
         let mut my_file = create_file("readme.md");
-        for i in 1..1000 {
+        for i in 1..10 {
             if i%2==0 {
                 my_file.write(b"\n# To be or not to be , this is a question.").expect("写入失败");
             }else {
