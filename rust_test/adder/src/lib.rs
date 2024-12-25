@@ -156,10 +156,9 @@ mod tests {
                 .expect("写入失败");
             }else {
                 //my_file.write(b"\n## To be or not to be , this is a question.").expect("写入失败");
-                my_file.seek_write(b"---",0)
+                my_file.seek_write(b" ",0)
                 .expect("写入失败");
             }
-            sleep(one_millis);
         }
     }
 }
