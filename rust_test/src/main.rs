@@ -26,7 +26,7 @@ fn create_file_success() {
     let mut my_file = create_file("poem.md");
     for i in 1..11 {
         if i%2==0 {
-            my_file.write(b"\n# To be or not to be , this is a question.")
+            my_file.write(b"# To be or not to be , this is a question.")
             .expect("写入失败");
         }else {
             //my_file.write(b"\n## To be or not to be , this is a question.").expect("写入失败");
