@@ -161,6 +161,15 @@ mod tests {
             }
         }
     }
+
+    #[test]
+    fn it_work() -> Result<(), String> {
+        if 4 == 2+2 {
+            Ok(())
+        }else {
+            Err(String::from("得到2+2不等于4"))
+        }
+    }
 }
 
 //---------------snip----------------由 cargo new 自动生成的测试模块和函数
