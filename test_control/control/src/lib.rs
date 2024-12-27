@@ -33,6 +33,8 @@ pub fn add_two(a: i32) -> i32 {
 //******snip**************/
 
 
+//**************************忽略某些测试*****************************/
+//可以添加#[ignore]属性来忽略某些测试函数
 
 
 #[cfg(test)]
@@ -75,23 +77,37 @@ mod tests {
 
 //*通过指定名字来运行部分测试 */
 //示例 11-11：不同名称的三个测试
-#[test]
-fn add_two_and_two() {
-    assert_eq!(4, add_two(2));
-}
+    #[test]
+    fn add_two_and_two() {
+        assert_eq!(4, add_two(2));
+    }
 
-#[test]
-fn add_three_and_two() {
-    assert_eq!(5, add_two(3));
-}
+    #[test]
+    fn add_three_and_two() {
+        assert_eq!(5, add_two(3));
+    }
 
-#[test]
-fn one_hundred() {
-    assert_eq!(102, add_two(100));
-}
+    #[test]
+    fn one_hundred() {
+        assert_eq!(102, add_two(100));
+    }
 /*运行单个测试--指定测试名称，如：cargo test one_hundred(测试函数名)*/
 /*过滤运行多个测试--名字中共同的字段，或者测试模块名*/
 //*示例 11-11：不同名称的三个测试*/
 
+//***************忽略某些测试****************/
+    #[test]
+    fn it_works() {
+        assert_eq!(2 + 2, 4);
+    }
+
+    #[test]
+    #[ignore]
+    fn expensive_test() {
+        for i in 1..1000000 {
+            println!("沉舟侧畔千帆过，病树前头万木春。({})",i);
+        }
+    }
+//****************snip*********************/
 
 }
