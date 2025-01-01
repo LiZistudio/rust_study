@@ -10,6 +10,14 @@
 
 
 //*测试私有函数*/
+pub fn add_two(a: i32) -> i32 {
+    internal_adder(a, 2)
+}
+
+fn internal_adder(a: i32, b: i32) -> i32 {
+    a + b
+}
+//例 11-12：测试私有函数
 
 
 
