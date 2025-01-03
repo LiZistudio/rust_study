@@ -37,7 +37,7 @@ mod tests {
         let a = 3;
         let b = 2;
         let result = internal_adder(a,b);
-        assert_eq!(6,result,"should {}(result) = {}(a) + {}(b)",5,a,b);
+        assert_eq!(5,result,"should {}(result) = {}(a) + {}(b)",5,a,b);
     }
 
 //*___________________snip____________________*/
