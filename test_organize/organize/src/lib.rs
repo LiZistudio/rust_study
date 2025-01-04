@@ -22,7 +22,7 @@ fn internal_adder(a: i32, b: i32) -> i32 {
 
 
 //*____________________集成测试_________________*/
-
+//转到tests目录下的integration_test.rs文件
 
 
 
@@ -44,6 +44,7 @@ mod tests {
 
 
 //*____________________集成测试________________*/
+//转到tests目录下的integration_test.rs文件
 
 
 }
