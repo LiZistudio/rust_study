@@ -40,11 +40,12 @@ fn main() -> std::io::Result<()> {
             false => continue,
         }
     }
-    println!("------------------snip-------------------------");
 
     if !found {
         println!("未找到包含\"{}\"的字符串", grep);
     }
+    
+    println!("------------------snip-------------------------");
 
     println!("\n>>>按Enter键退出<<<...");
     let mut temp = String::new();
