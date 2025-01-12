@@ -91,7 +91,14 @@
 use std::env;
 
 fn main() {
-    let args:Vec<String> = env::args().collect();
+    let args = env::args().collect::<Vec<String>>(); // 获取命令行参数
+
+    let len = args.len(); // 获取参数个数
+    let query = &args[0]; // 获取第一个参数
+    let filename = &args[1..len]; // 获取第二个参数
+    println!("query: {}", query);
+    println!("filename: {:?}", filename);
+
     for arg in &args {
         let arg = &arg[..];
         println!("{:?}",&arg);
