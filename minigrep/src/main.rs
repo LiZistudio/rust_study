@@ -88,19 +88,29 @@
 //     Ok(())
 // }
 
+
+//args 函数和无效的 Unicode
+//注意 std::env::args 在其任何参数包含无效 Unicode 字符时会 panic。
+//如果你需要接受包含无效 Unicode 字符的参数，使用 std::env::args_os 代替。
+//这个函数返回 OsString 值而不是 String 值。
+//这里出于简单考虑使用了 std::env::args，因为 OsString 值每个平台都不一样而且比 String 值处理起来更为复杂。
+
 use std::env;
 
 fn main() {
     let args = env::args().collect::<Vec<String>>(); // 获取命令行参数
 
     let len = args.len(); // 获取参数个数
-    let query = &args[0]; // 获取第一个参数
-    let filename = &args[1..len]; // 获取第二个参数
+    println!("{}",len);
+    //示例 12-2：创建变量来存放查询参数和文件名参数
+    let _path = &args[0]; // 获取第一个参数  //注意 vector 的第一个值是 "target/debug/minigrep"，它是二进制文件的名称。
+    let query = &args[1]; // 获取第二个参数
+    let filename = &args[2..len].join(" "); // 获取第三个参数
     println!("query: {}", query);
-    println!("filename: {:?}", filename);
+    println!("filename: {}", filename);
 
     for arg in &args {
         let arg = &arg[..];
-        println!("{:?}",&arg);
+        println!("{}",&arg);
     }
 }
