@@ -95,7 +95,7 @@
 //这个函数返回 OsString 值而不是 String 值。
 //这里出于简单考虑使用了 std::env::args，因为 OsString 值每个平台都不一样而且比 String 值处理起来更为复杂。
 
-use std::env;
+use std::{env, fs::File, io::BufRead, path::Path};
 
 fn main() {
     let args = env::args().collect::<Vec<String>>(); // 获取命令行参数
@@ -113,4 +113,16 @@ fn main() {
         let arg = &arg[..];
         println!("{}",&arg);
     }
+
+    // 读取文件
+    let path = Path::new(filename);
+    let file = File::open(path).expect("文件不存在");
+    let reader = std::io::BufReader::new(file);
+    for line in reader.lines() {
+        let line = line.expect("读取行失败");
+        if line.contains(query) {
+            println!("{}", line);
+        }
+    }
+
 }
