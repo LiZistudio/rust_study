@@ -105,15 +105,24 @@ use std::{
 fn main() -> Result<(),Error>{
     let args = env::args().collect::<Vec<String>>(); // 获取命令行参数
 
-    let len = args.len(); // 获取参数个数
-    println!("{}",len);
-    //示例 12-2：创建变量来存放查询参数和文件名参数
-    //注意 vector 的第一个值是 "target/debug/minigrep"，它是二进制文件的名称。
-    let _path = &args[0]; // 获取第一个参数  
-    let query = &args[1]; // 获取第二个参数
-    let filename = &args[2..len].join(" "); // 获取第三个参数
-    println!("query: {}", query);
-    println!("filename: {}", filename);
+    // let len = args.len(); // 获取参数个数
+    // println!("{}",len);
+    // //示例 12-2：创建变量来存放查询参数和文件名参数
+    // //注意 vector 的第一个值是 "target/debug/minigrep"，它是二进制文件的名称。
+    // let _path = &args[0]; // 获取第一个参数  
+    // let query = &args[1]; // 获取第二个参数
+    // let filename = &args[2..len].join(" "); // 获取第三个参数
+    let config = Config::new(&args);
+    let config = match config {
+        Ok(config) => config,
+        Err(e) => {
+            eprintln!("参数解析失败: {}", e);
+            return Ok(());
+        } 
+    };
+
+    println!("query: {}", config.query);
+    println!("filename: {}", config.filename);
 
     for arg in &args {
         let arg = &arg[..];
@@ -121,7 +130,7 @@ fn main() -> Result<(),Error>{
     }
 
     // 读取文件
-    let path = Path::new(filename);
+    let path = Path::new(&config.filename[..]);
     let file = File::open(path)?;
     // if let Err(e) = file {
     //     eprintln!("文件打开失败: {}", e);
@@ -130,13 +139,31 @@ fn main() -> Result<(),Error>{
     let reader = std::io::BufReader::new(file);
     for line in reader.lines() {
         let line = line?;
-        if line.contains(query) {
+        if line.contains(&config.query[..]) {
             println!("{}", line);
         }
     }
 
-    let contents= std::fs::read_to_string(filename)?;
+    let contents= std::fs::read_to_string(&config.filename)?;
     println!("{}",contents);
 
     Ok(())
+}
+
+
+//解耦
+//通过用户输入得到配制变量
+struct Config {
+    query:String,
+    filename:String,
+}
+impl Config {
+    fn new(args:&Vec<String>) -> Result<Config,&'static str> {
+        if args.len() < 3 {
+            return Err("参数不足");
+        }
+        let query = args[1].clone();
+        let filename = args[2].clone();
+        Ok(Config{query,filename})
+    }
 }
