@@ -113,6 +113,7 @@ fn main() -> Result<(),Error>{
     // let query = &args[1]; // 获取第二个参数
     // let filename = &args[2..len].join(" "); // 获取第三个参数
     let config = Config::new(&args);
+    
     let config = match config {
         Ok(config) => config,
         Err(e) => {
@@ -130,22 +131,10 @@ fn main() -> Result<(),Error>{
     }
 
     // 读取文件
-    let path = Path::new(&config.filename[..]);
-    let file = File::open(path)?;
-    // if let Err(e) = file {
-    //     eprintln!("文件打开失败: {}", e);
-    //     return Ok(());
-    // }
-    let reader = std::io::BufReader::new(file);
-    for line in reader.lines() {
-        let line = line?;
-        if line.contains(&config.query[..]) {
-            println!("{}", line);
-        }
-    }
+    print_raw(&config.filename, &config.query)?;
 
-    let contents= std::fs::read_to_string(&config.filename)?;
-    println!("{}",contents);
+    //打印文件中的内容
+    print_file(&config.filename)?;
 
     Ok(())
 }
@@ -166,4 +155,27 @@ impl Config {
         let filename = args[2].clone();
         Ok(Config{query,filename})
     }
+}
+
+//打印包含特定字符串切片行
+fn print_raw(filename:&str,query:&str) -> Result<(),Error> {
+    let path = Path::new(filename);
+    let file = File::open(path)?;
+    let reader = std::io::BufReader::new(file);
+    for line in reader.lines() {
+        let line = line?;
+        if line.contains(query) {
+            println!("{}", line);
+        }
+    }
+    Ok(())
+}
+
+//打印文件中的内容
+fn print_file(filename:&str) -> Result<(),Error> {
+    
+    let content = std::fs::read_to_string(filename)?;
+    println!("{}",content);
+
+    Ok(())
 }
