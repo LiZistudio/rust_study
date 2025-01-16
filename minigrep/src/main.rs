@@ -201,13 +201,20 @@ fn main() /*-> std::io::Result<()>*/ {
         process::exit(1);
     });
 
-    println!("query: {},filename:{}", config.query,config.filename);
+    //println!("query: {},filename:{}", config.query,config.filename);
 
-    if let Err(e) = minigrep::run(config) {
+    if let Err(e) = minigrep::run(&config) {
         println!("{}",e);
         process::exit(1);
     }
     
+
+    let results = minigrep::search(&config.query, &config.filename);
+    let mut i = 0;
+    for line in results {
+        i += 1;
+        println!("有“us”的语句{}:{}",i, line);
+    }
 
     //Ok(())
 }
