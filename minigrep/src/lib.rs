@@ -26,3 +26,21 @@ impl Config {
     
     }    
 }
+
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_run_print_poem() {
+        let config = Config {
+            query:String::from("us"),
+            filename:String::from("for_grep.md"),
+        };
+
+        if let Err(e) = run(config) {
+            println!("读取错误:{}",e);
+        }
+    }
+}
