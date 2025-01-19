@@ -209,11 +209,14 @@ fn main() /*-> std::io::Result<()>*/ {
     }
     
 
-    let results = minigrep::search(&config.query, &config.filename);
+    let results = minigrep
+    ::search(&config.query, &config.filename)
+    .expect("error");
+
     let mut i = 0;
     for line in results {
         i += 1;
-        println!("有“us”的语句{}:{}",i, line);
+        println!("有“us”的语句{:?}:{:?}",i, line);
     }
 
     //Ok(())

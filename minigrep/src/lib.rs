@@ -30,23 +30,18 @@ impl Config {
 }
 
 //search
-pub fn search(query:&str,filename:&str) -> Vec<String> {
+pub fn search(query:&str,filename:&str) -> Result<Vec<String>,io::Error> {
     let mut result = Vec::new();
     let path = Path::new(filename);
-    let file = File::open(path);
-    let file = match file {
-        Ok(file) => file,
-        Err(e) => panic!("打开文件失败{}",e),
-    };
+    let file = File::open(path)?;
     let reader = io::BufReader::new(file);
     for line in reader.lines() {
-        if let Ok(line) = line {
-            if line.contains(query) {
-                result.push(line);
-            }
+        let line = line?;
+        if line.contains(query) {
+            result.push(line);
         }
     }
-    result
+    Ok(result)
 }
 
 
@@ -71,7 +66,7 @@ mod test {
     fn one_result() {
         let query = "us";
         let filename = "for_grep.md";
-        let result_arr = search(query,filename);
+        let result_arr = search(query,filename).expect("查找失败");
 
         let expected_arr = vec![
             String::from("# Then there's a pair of us - don't tell!"),
@@ -81,4 +76,3 @@ mod test {
         assert_eq!(result_arr,expected_arr);
     }
 }
-
