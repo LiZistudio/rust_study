@@ -1,0 +1,9 @@
+[package]
+name = "faliment_grep"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+encoding_rs = "0.8.26"
+encoding_rs_io = "0.1.6"
+colored = "3.0.0"

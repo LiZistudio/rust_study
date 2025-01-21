@@ -1,0 +1,68 @@
+PLA 24
+ABS 5
+PC 5
+PETG 7
+PETG ESD 1
+ASA 1
+TPU 9
+PA 7
+PVA 4
+
+PA12 CF 7
+PA12 CF Support 5
+
+PPA GF 4
+PPA CF 5
+PPA Support 3
+
+PET CF 1
+PET GF 3
+PET Support 3
+
+Hyper Core ABS CF15 1
+
+Hyper Speed PLA 3
+Hyper Speed ABS 7
+
+PC FR 1
+PC ABS 1
+
+POLY WOOD 5
+
+PA GF 1
+POLY SMOOTH 1  
+
+Form 4 Rigid 4000 V1 tank 1
+Form 4 Clear V5 tank 1
+Form 4 Elastic 50A V2 tank 1
+Form 4 Flexible 80A V1.1 tank 1
+Form 4 Black tank 1
+Form 4 Tough 2000 V1 tank 1
+Form 4 Durable V2.1 tank 1
+Form 4 White V5 tank 1
+Form 4 Flame Retardant V1 tank 1
+Form 4 Grey V5 tank 1
+Form 4 Rigid 10K V1.1 tank 1
+
+Form 4 Grey V5 Resin 3
+Form 4 Tough 2000 Resin V1.1 1
+Form 4 Rigid 4000 Resin V1 1
+Form 4 Flexible 80A Resin V1.1 2
+Form 4 White Resin V5 1
+Form 4 Elastic 50A Resin V2 2
+Form 4 Flame Retardant Resin V1 1
+Form 4 Clear Resin V5 1
+Form 4 Durable Resin V2.1 1
+Form 4 High Temp Resin 1
+
+DF 2 Standard White tank 1
+DF 2 High Detail tank 1
+DF 2 Rigid 3K tank 1
+DF 2 Tough 2K Grey tank 1
+
+DF 2 Standard White Resin V1 4
+DF 2 High Detail Apricot Resin V1 2
+DF 2 High Clear Resin V1 1
+DF 2 Tough 2K Grey Resin V1 5
+
+
