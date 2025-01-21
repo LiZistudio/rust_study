@@ -15,7 +15,7 @@ fn main() -> std::io::Result<()> {
 
         println!("{}","欢迎使用打样材料库存查询系统;-)          ".on_bright_white().bright_red());
         println!("{}","*****************************************".on_bright_white().bright_red());
-        println!("{}","**      1.🔍查询           0.⏏️ 退出    **".on_bright_white().bright_red());
+        println!("{}","**      1.🔍查询          0.⏏️ 退出    **".on_bright_white().bright_red());
         println!("{}","**          (请输入对应序号)           **".on_bright_white().bright_red());
         println!("{}","**                 (Copyright ©2025 Kk)**".on_bright_white().bright_red());
         println!("{}","*****************************************".on_bright_white().bright_red());
@@ -40,7 +40,7 @@ fn main() -> std::io::Result<()> {
                 let file = match File::open(file_path) {
                     Ok(file) => file,
                     Err(e) => {
-                        eprintln!("{}{}","无法打开文件".red(), e);
+                        eprintln!("{}{}","无法打开文件".bright_red(), e);
                         pause()?;
                         return Ok(());
                     }
@@ -52,7 +52,7 @@ fn main() -> std::io::Result<()> {
                 let mut found = false;
                 let mut match_count = 0;
 
-                println!("\n{} \"{}\" {}","正在搜索".blue(), filament_kind.red(),"...".blue());
+                println!("\n{} \"{}\" {}","正在搜索".bright_blue(), filament_kind.bright_red(),"...".bright_blue());
                 println!("{}","==================snip========================".bright_yellow());
 
                 for line in reader.lines() {
@@ -62,10 +62,10 @@ fn main() -> std::io::Result<()> {
                             if content.to_lowercase().contains(&filament_kind.to_lowercase()) {
                                 found = true;
                                 match_count += 1;
-                                println!("{}\n{}","查找结果 #".bright_blue(), match_count);
-                                println!("{} {}","行号:".yellow(), counter);
-                                println!("{} {}","原始内容:".yellow(), content.bright_red());
-                                
+                                println!("{} {}","查找结果 #".bright_blue(), match_count);
+                                println!("{} {}","行号:".bright_yellow(), counter);
+                                println!("{} {}","原始内容:".bright_yellow(), content.bright_red());
+                                                                
                                 let kind: Vec<&str> = content.split_whitespace().collect();
 
                                 if !kind.is_empty() {
@@ -77,11 +77,12 @@ fn main() -> std::io::Result<()> {
                                     filament_name.bright_red(),
                                     "数量为".bright_blue(), 
                                     filament_number.bright_red());
+                                    println!("{}","---------------------------------------------".bright_yellow());
                                 }
                             }
                         },
                         Err(e) => {
-                            eprintln!("{} {}{}{}","警告⚠️ : 读取第".red(), counter," 行时出错 - ".red(), e);
+                            eprintln!("{} {}{}{}","警告⚠️ : 读取第".bright_red(), counter," 行时出错 - ".bright_red(), e);
                             continue;
                         }
                     }
@@ -89,11 +90,11 @@ fn main() -> std::io::Result<()> {
 
                 println!("\n{}","====================snip======================".bright_yellow());
                 if !found {
-                    println!("{}\"{}\"","未找到 材料".blue(), filament_kind.red());
+                    println!("{}\"{}\"","未找到 材料".bright_blue(), filament_kind.bright_red());
                 } else {
-                    println!("{}{}{}","共找到 ".blue(), match_count," 处匹配".blue());
+                    println!("{}{}{}","共找到 ".bright_blue(), match_count," 处匹配".bright_blue());
                 }
-                println!("{}{}{}","总共搜索了 ".blue(), counter," 行内容".blue());
+                println!("{}{}{}","总共搜索了 ".bright_blue(), counter," 行内容".bright_blue());
 
                 pause()?;
             },
@@ -108,7 +109,7 @@ fn main() -> std::io::Result<()> {
 }
 
 fn pause() -> std::io::Result<()> {
-    println!("\n{}","按Enter键继续...".yellow());
+    println!("\n{}","按Enter键继续...".bright_yellow());
     io::stdout().flush()?;
     let mut temp = String::new();
     std::io::stdin().read_line(&mut temp)?;
