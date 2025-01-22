@@ -197,14 +197,14 @@ fn main() /*-> std::io::Result<()>*/ {
     //     }
     // };
     let config = Config::new(&args).unwrap_or_else(|err| {
-        println!("Problem parsing arguments: {}", err);
+        eprintln!("Problem parsing arguments: {}", err);
         process::exit(1);
     });
 
     //println!("query: {},filename:{}", config.query,config.filename);
 
     if let Err(e) = minigrep::run(&config) {
-        println!("{}",e);
+        eprintln!("Application error: {}",e);
         process::exit(1);
     }
 
