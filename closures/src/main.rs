@@ -4,7 +4,7 @@
 //闭包：可以捕获环境的匿名函数
 //Rust 的 闭包（closures）是可以保存进变量或作为参数传递给其他函数的匿名函数。
 
-use std::{thread, time::Duration};
+use std::{collections::HashMap, thread, time::Duration};
 
 use rand::Rng;
 
@@ -138,7 +138,7 @@ struct Cacher<T>
     where T:Fn(u32) -> u32 
 {
     calculation:T,
-    value:Option<u32>,
+    value:HashMap<u32,u32>,
 }
 
 impl<T> Cacher<T> 
@@ -147,7 +147,7 @@ impl<T> Cacher<T>
     fn new(calculation:T) -> Cacher<T> {
         Cacher {
             calculation,
-            value:None,
+            value:HashMap::new(),
         }
     }
 
