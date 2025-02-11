@@ -34,12 +34,11 @@ fn main() {
 
 
     //闭包会捕获其环境
-    let x = 4;
-    let equal_to_x = |a| {a == x};
-    let y = 4;
+    let x = vec![1,2,3];
+    let equal_to_x = move |a| {a == x};
+    let y = vec![1,2,3];
     assert!(equal_to_x(y));
     //示例 13-12：一个引用了其周围作用域中变量的闭包示例
-    
 
 }
 
