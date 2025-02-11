@@ -19,7 +19,14 @@ fn main() {
 
     //示例 13-8：尝试调用一个被推断为两个不同类型的闭包
     let example_closure = |x| x;
-    let result = example_closure(String::from("杨柳岸，晓风残月。多情应笑我，早生华发。"));
+    let result = example_closure(String::from(
+        "寒蝉凄切，对长亭晚，骤雨初歇。
+        都门帐饮无绪，留恋处，兰舟催发。执手相看泪眼，竟无语凝噎。
+        念去去，千里烟波，暮霭沉沉楚天阔。
+        多情自古伤离别，更那堪，冷落清秋节！
+        今宵酒醒何处？杨柳岸，晓风残月。
+        此去经年，应是良辰好景虚设。
+        便纵有千种风情，更与何人说？"));
     println!("examplr_closure's value is :{}",result);
     //example_closure(3);
     //第一次使用 String 值调用 example_closure 时，编译器推断 x 和此闭包返回值的类型为 String。
@@ -134,29 +141,33 @@ fn generate_workout(intensity:u32,random_number:u32) {
 
 //************使用带有泛型和 Fn trait 的闭包**********************
 //示例 13-9：定义一个 Cacher 结构体来在 calculation 中存放闭包并在 value 中存放 Option 值
-struct Cacher<T> 
-    where T:Fn(u32) -> u32 
+struct Cacher<T,U,V> 
+    where T:Fn(U) -> V,
+          U:Copy + Eq + std::hash::Hash,
+          V:Copy + Eq + std::hash::Hash,
 {
     calculation:T,
-    value:HashMap<u32,u32>,
+    value:HashMap<U,V>,
 }
 
-impl<T> Cacher<T> 
-    where T:Fn(u32) -> u32
+impl<T,U,V> Cacher<T,U,V> 
+    where T:Fn(U) -> V,
+    U:Copy + Eq + std::hash::Hash,
+    V:Copy + Eq + std::hash::Hash,
 {
-    fn new(calculation:T) -> Cacher<T> {
+    fn new(calculation:T) -> Cacher<T,U,V> {
         Cacher {
             calculation,
             value:HashMap::new(),
         }
     }
 
-    fn value(&mut self,arg:u32) -> u32 {
+    fn value(&mut self,arg:U) -> V {
             match self.value.get(&arg) {
                 Some(&v) => v,
                 None => {
-                    let v = (self.calculation) (arg);
-                    self.value.entry(arg).or_insert(v);
+                    let v = (self.calculation)(arg);
+                    self.value.insert(arg, v);
                     v
                 },
             }
@@ -174,11 +185,15 @@ mod tests {
 
     #[test]
     fn call_with_different_values() {
-        let mut c = Cacher::new(|a| {let result = (a+1)*10;result});
+        let mut c = Cacher::new(
+            |a| {
+                a+1
+            }
+        );
     
         let _v1 = c.value(1);
         let v2 = c.value(2);
     
-        assert_eq!(v2, 30);
+        assert_eq!(v2, 3);
     }
 }
