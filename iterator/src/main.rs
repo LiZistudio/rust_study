@@ -27,3 +27,21 @@ pub trait Iterator {
 
     //此处省去方法默认实现
 }
+
+
+//消费迭代器的方法
+//这些调用next方法的方法被称为消费适配器（consuming adaptors），因为调用他们会消费迭代器
+//如sum方法:
+#[test]
+fn iterator_sum() {
+    let vec1 = vec![1,2,3,4,5,6,7,8,9];
+    let iterator_v1 = vec1.iter();
+    let sum1:i32 = iterator_v1.sum();
+
+    assert_eq!(sum1,45);
+}
+//示例 13-16：调用 sum 方法获取迭代器所有项的总和
+//调用 sum 之后不再允许使用 v1_iter 因为调用 sum 时它会获取迭代器的所有权。
+
+//产生其他迭代器的方法
+//迭代适配器
