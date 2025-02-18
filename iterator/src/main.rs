@@ -48,6 +48,9 @@ fn iterator_sum() {
 #[test]
 fn func() {
     let v2 = vec![1,2,3];
-    v2.iter().map(|x|{x+1});
-    
+    let v3:Vec<_> = v2.iter().map(|x|{x+1}).collect();
+    let v4 = vec![2,3,4];
+    assert_eq!(v3,v4);
 }
+//示例 13-17：调用迭代器适配器 map 来创建一个新迭代器
+//示例 13-18：调用 map 方法创建一个新迭代器，接着调用 collect 方法消费新迭代器并创建一个 vector
