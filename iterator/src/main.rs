@@ -36,12 +36,18 @@ pub trait Iterator {
 fn iterator_sum() {
     let vec1 = vec![1,2,3,4,5,6,7,8,9];
     let iterator_v1 = vec1.iter();
-    let sum1:i32 = iterator_v1.sum();
+    let total:i32 = iterator_v1.sum();
 
-    assert_eq!(sum1,45);
+    assert_eq!(total,45);
 }
 //示例 13-16：调用 sum 方法获取迭代器所有项的总和
 //调用 sum 之后不再允许使用 v1_iter 因为调用 sum 时它会获取迭代器的所有权。
 
 //产生其他迭代器的方法
 //迭代适配器
+#[test]
+fn func() {
+    let v2 = vec![1,2,3];
+    v2.iter().map(|x|{x+1});
+    
+}
