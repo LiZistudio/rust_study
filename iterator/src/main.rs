@@ -16,6 +16,8 @@ pub trait Iterator {
 
 #[cfg(test)]
 mod tests {
+    use crate::{shoes_in_my_size, Shoe};
+
 
     #[test]
     fn iterator_next() {
@@ -62,6 +64,31 @@ mod tests {
 
 
     //使用闭包获取环境
+    #[test]
+    fn filters_by_size() {
+        let shoes_vec1 = vec![
+            Shoe {size:42,style:String::from("sneaker")},
+            Shoe {size:40,style:String::from("sandal")},
+            Shoe {size:42,style:String::from("boot")},
+        ];
 
+        let my_shoes = shoes_in_my_size(shoes_vec1, 42);
+        let suit_shoes = vec![Shoe {size:42,style:String::from("sneaker")},
+                                        Shoe{size:42,style:String::from("boot")}];
+
+        assert_eq!(my_shoes,suit_shoes);
+    }
 }
 
+#[derive(PartialEq,Debug)]
+struct Shoe {
+    size:i32,
+    style:String,
+}
+
+//示例 13-19：使用 filter 方法和一个捕获 shoe_size 的闭包
+fn shoes_in_my_size(shoes:Vec<Shoe>,shoe_size:i32) -> Vec<Shoe> {
+    shoes.into_iter()
+        .filter(|s|{s.size == shoe_size})
+        .collect()
+}
