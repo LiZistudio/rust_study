@@ -81,14 +81,49 @@ mod tests {
 }
 
 #[derive(PartialEq,Debug)]
-struct Shoe {
-    size:i32,
-    style:String,
+pub struct Shoe {
+    pub size:i32,
+    pub style:String,
 }
 
 //示例 13-19：使用 filter 方法和一个捕获 shoe_size 的闭包
-fn shoes_in_my_size(shoes:Vec<Shoe>,shoe_size:i32) -> Vec<Shoe> {
+pub fn shoes_in_my_size(shoes:Vec<Shoe>,shoe_size:i32) -> Vec<Shoe> {
     shoes.into_iter()
         .filter(|s|{s.size == shoe_size})
         .collect()
 }
+
+//实现 Iterator trait 来创建自定义迭代器
+struct Counter {
+    count:u32,
+}
+
+impl Counter {
+    fn new() -> Counter {
+        Counter {
+            count:0,
+        }
+    }
+}
+//示例 13-20：定义 Counter 结构体和一个创建 count 初值为 0 的 Counter 实例的 new 函数
+
+impl Iterator for Counter {
+    type Item = u32;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        self.count += 1;
+
+        // if self.count < 6 {
+        //     Some(self.count)
+        // }else {
+        //     None
+        // }
+
+        let cmp_number = 6;
+        match self.count.cmp(&cmp_number) {
+            std::cmp::Ordering::Less => Some(self.count),
+            _ => None,
+        }
+    }
+}
+//示例 13-21：在 Counter 结构体上实现 Iterator trait
