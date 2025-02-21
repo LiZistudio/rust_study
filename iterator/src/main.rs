@@ -127,3 +127,16 @@ impl Iterator for Counter {
     }
 }
 //示例 13-21：在 Counter 结构体上实现 Iterator trait
+
+#[test]
+fn ont_to_six_iterator() {
+    let mut counter = Counter::new();
+
+    assert_eq!(counter.next(),Some(1));
+    assert_eq!(counter.next(),Some(2));
+    assert_eq!(counter.next(),Some(3));
+    assert_eq!(counter.next(),Some(4));
+    assert_eq!(counter.next(),Some(5));
+    assert_eq!(counter.next(),None);   
+}
+//示例 13-22：测试 next 方法实现的功能
