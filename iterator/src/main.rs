@@ -5,13 +5,12 @@ fn main() {
 
 //Iterator trait 和 next 方法
 //迭代器都实现了一个叫做 Iterator 的定义于标准库的 trait。这个 trait 的定义看起来像这样：
-pub trait Iterator {
-    type Item;
-    fn next(&mut self) -> Option<Self::Item>;
+// pub trait Iterator {
+//     type Item;
+//     fn next(&mut self) -> Option<Self::Item>;
 
-    //此处省去方法默认实现
-}
-
+//     //此处省去方法默认实现
+// }
 
 
 #[cfg(test)]
@@ -119,9 +118,17 @@ impl Iterator for Counter {
         //     None
         // }
 
-        let cmp_number = 6;
-        match self.count.cmp(&cmp_number) {
-            std::cmp::Ordering::Less => Some(self.count),
+        //let cmp_number = 6;
+        // match self.count.cmp(&cmp_number) {
+        //     std::cmp::Ordering::Less => Some(self.count),
+        //     _ => None,
+        // }
+        // match self.count {
+        //     0..=5 => Some(self.count),
+        //     _ => None,
+        // }
+        match self.count {
+            n if n < 6 => Some(n),
             _ => None,
         }
     }
@@ -140,3 +147,15 @@ fn ont_to_six_iterator() {
     assert_eq!(counter.next(),None);   
 }
 //示例 13-22：测试 next 方法实现的功能
+
+//使用自定义迭代器中其他 Iterator trait 方法
+#[test]
+fn using_other_iterator_trait_methods() {
+    let sum: u32 = Counter::new()
+        .zip(Counter::new().skip(1))
+        .map(|(a, b)| a * b)
+        .filter(|x| x % 3 == 0)
+        .sum();
+    assert_eq!(18, sum);
+}
+//示例 13-23：使用自定义的 Counter 迭代器的多种方法
