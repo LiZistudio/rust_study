@@ -27,7 +27,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "minigrep"
+name = "io_improvement"
 version = "0.1.0"
 dependencies = [
  "encoding_rs",
