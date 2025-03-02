@@ -7,7 +7,7 @@ fn main() {
 mod tests {
     #[test]
     fn iterator_loop() {
-        let buffer: &mut [i32] = 70;
+        let buffer: &mut [i32] = &mut [1,2,3,4,5];
         let coefficients: [i64; 12] = [3;12];
         let qlp_shift: i16 = 30;
 
