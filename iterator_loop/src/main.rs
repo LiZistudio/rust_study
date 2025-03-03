@@ -1,4 +1,6 @@
 
+//迭代器是 Rust 的 零成本抽象（zero-cost abstractions）之一，它意味着抽象并不会引入运行时开销。
+
 fn main() {
     println!("iterator VS loop");
 }
