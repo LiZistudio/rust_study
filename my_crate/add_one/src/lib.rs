@@ -1,5 +1,22 @@
 //编写有用的文档注释
 
+ 
+///计算两个32位浮点数的和
+/// 
+/// #Examples
+/// 
+/// ```
+/// let a = 1.0;
+/// let b = 2.0;
+/// let result = my_crate::add(a, b);
+/// 
+/// assert_eq!(result, 3.0);
+///
+pub fn add(left: f32, right: f32) -> f32 {
+    left + right
+}
+
+
 /// Adds one to the number given.
 ///
 /// # Examples
@@ -9,12 +26,7 @@
 /// let answer = my_crate::add_one(arg);
 ///
 /// assert_eq!(6, answer);
-/// 
-
-pub fn add(left: f32, right: f32) -> f32 {
-    left + right
-}
-
+///
 pub fn add_one(x: f32) -> f32 {
     x + 1.0
 }
