@@ -49,6 +49,12 @@ mod tests {
 
 
 //常用（文档注释）部分
-
+//# Examples
+//# Panics
+//# Errors
+//# Safety
 
 //文档注释作为测试
+
+
+//注释包含项的结构
