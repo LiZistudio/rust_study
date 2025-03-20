@@ -27,8 +27,8 @@ pub fn add(left: f32, right: f32) -> f32 {
 ///
 /// assert_eq!(6, answer);
 ///
-pub fn add_one(x: f32) -> f32 {
-    x + 1.0
+pub fn add_one(x: i32) -> i32 {
+    x + 1
 }
 
 #[cfg(test)]
@@ -44,6 +44,19 @@ mod tests {
     #[test]
     fn test_add_one() {
         assert_eq!(3.0, add_one(2.0));
+    }
+
+    #[test]
+    fn closures() {
+        let plus_one = |x| x + 1;
+        assert_eq!(3, plus_one(2));
+
+        let a = 10;
+        let plus_a_b = |x:i32| -> i32 {
+            let result = x + a; result
+        };
+
+        assert_eq!(12, plus_a_b(2));
     }
 }
 
