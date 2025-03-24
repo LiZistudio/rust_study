@@ -1,3 +1,14 @@
+//注释包含项的结构
+//! # My Crate
+//!
+//! `my_crate` is a collection of utilities to make performing certain
+//! calculations more convenient.
+
+/// Adds one to the number given.
+// --snip--
+//示例 14-2：my_crate crate 整体的文档
+
+
 //编写有用的文档注释
 
 
@@ -68,17 +79,6 @@ mod tests {
 //# Safety
 
 //文档注释作为测试
-
-
-//注释包含项的结构
-//! # My Crate
-//!
-//! `my_crate` is a collection of utilities to make performing certain
-//! calculations more convenient.
-
-/// Adds one to the number given.
-// --snip--
-//示例 14-2：my_crate crate 整体的文档
 
 
 //使用 pub use 导出合适的公有 API
