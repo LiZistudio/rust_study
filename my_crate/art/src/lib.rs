@@ -18,7 +18,7 @@ pub mod utils {
     use crate::kinds::*;
 
     pub fn mix(c1: PrimaryColor, c2: PrimaryColor) -> SecondaryColor {
-        let tup = (c1, c2);
+        let tup:(PrimaryColor,PrimaryColor) = (c1, c2);
         match tup {
             (PrimaryColor::Red, PrimaryColor::Yellow) => SecondaryColor::Orange,
             (PrimaryColor::Yellow, PrimaryColor::Red) => SecondaryColor::Orange,
