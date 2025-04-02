@@ -1,9 +1,15 @@
 //! # Art
 //!
-//! #这是一个用于对艺术概念进行建模的库
+//! # 这是一个用于对艺术概念进行建模的库
 //! # 该库包含两种颜色的枚举类型：
 //! - `PrimaryColor`：表示三种原色（红色、黄色和蓝色）
 //! - `SecondaryColor`：表示三种混合色（橙色、绿色和紫色）
+
+pub use kinds::PrimaryColor;
+pub use kinds::SecondaryColor;
+pub use utils::mix;
+//示例 14-5：增加 pub use 语句重导出项
+
 
 pub mod kinds {
     /// The primary colors according to the RYB color model.

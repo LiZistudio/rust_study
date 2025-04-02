@@ -5,3 +5,4 @@ edition = "2024"
 
 [dependencies]
 add_one = {path = "./add_one"}
+art = {path = "./art"}
