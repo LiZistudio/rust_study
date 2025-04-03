@@ -79,17 +79,3 @@ mod tests {
 //# Safety
 
 //文档注释作为测试
-
-
-//使用 pub use 导出合适的公有 API
-//见库art
-
-//创建 Crates.io 账号
-
-//发布新 crate 之前
-
-//发布到 Crates.io
-
-//发布现存 crate 的新版本
-
-//使用 cargo yank 从 Crates.io 撤回版本
