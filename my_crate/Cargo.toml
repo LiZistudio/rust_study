@@ -2,6 +2,7 @@
 name = "my_crate"
 version = "0.1.0"
 edition = "2024"
+License = "MIT OR Apache-2.0"
 
 [dependencies]
 add_one = {path = "./add_one"}
