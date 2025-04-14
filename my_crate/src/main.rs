@@ -51,9 +51,12 @@ fn main() {
 // [dependencies]
 
 
-
-
 //发布到 Crates.io
+//发布 crate 时请多加小心，因为发布是 永久性的（permanent）。对应版本不可能被覆盖，其代码也不可能被删除。
+//crates.io 的一个主要目标是作为一个存储代码的永久文档服务器，这样所有依赖 crates.io 中的 crate 的项目都能一直正常工作。
+//而允许删除版本没办法达成这个目标。然而，可以被发布的版本号却没有限制。
+//cargo publish
+
 
 //发布现存 crate 的新版本
 
