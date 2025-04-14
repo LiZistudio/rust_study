@@ -39,7 +39,8 @@ fn main() {
 //向新 crate 添加元信息
 //修改 Cargo.toml 文件，添加 crate 的元信息。
 // license 标识符值
-//有了唯一的名称、版本号、由 cargo new 新建项目时增加的作者信息、描述和所选择的 license，已经准备好发布的项目的 Cargo.toml 文件可能看起来像这样：
+//有了唯一的名称、版本号、由 cargo new 新建项目时增加的作者信息、描述和所选择的 license，
+//已经准备好发布的项目的 Cargo.toml 文件可能看起来像这样：
 // [package]
 // name = "guessing_game"
 // version = "0.1.0"
