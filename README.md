@@ -5,5 +5,6 @@
 ![rust_study](https://pic2.zhimg.com/v2-839798432500b3aec901cba0efb93bf7_1440w.jpg?source=172ae18b)
 ```Rust
 fn main() {
-    println!("Hello, Rust.");
+    let str = String::from("Hello,Rust.");
+    println!("{:?}",str);
 }
