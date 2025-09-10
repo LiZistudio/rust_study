@@ -59,5 +59,15 @@ fn main() {
 
 
 //发布现存 crate 的新版本
+/*当你修改了 crate 并准备好发布新版本时，改变 Cargo.toml 中 version 所指定的值。
+请使用语义化版本规则来根据修改的类型决定下一个版本号。接着运行 cargo publish 来上传新版本。*/
 
 //使用 cargo yank 从 Crates.io 撤回版本
+/*$ cargo yank --vers 1.0.1
+    Updating crates.io index
+        Yank guessing_game@1.0.1*/
+
+ /*cargo yank --vers 1.0.1 --undo
+    Updating crates.io index
+      Unyank guessing_game@1.0.1*/
+
